@@ -19,7 +19,7 @@ tasks.register("downloadSherpaOnnxAar") {
         }
         sherpaAarFile.parentFile.mkdirs()
 
-        val pinnedVersion = project.findProperty("sherpaVersion")?.toString()?.trim().orEmpty()
+        val pinnedVersion = project.findProperty("sherpaVersion")?.toString()?.trim()?.ifEmpty { null } ?: "2.0.3"
         val candidateUrls = mutableListOf<String>()
 
         if (pinnedVersion.isNotEmpty()) {

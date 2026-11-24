@@ -143,7 +143,7 @@ class SherpaAsrSession(
         }
 
         val vadCfg = VadModelConfig().apply {
-            sileroVad = sileroCfg
+            sileroVadModelConfig = sileroCfg
             sampleRate = SAMPLE_RATE
             numThreads = 1
             provider = "cpu"
@@ -224,7 +224,8 @@ class SherpaAsrSession(
         // 若 VAD 已切出完整句子，立即做精准定稿识别并清空预览缓冲
         var emittedFinal = false
         while (!detector.empty()) {
-            val segment = detector.pop()
+            val segment = detector.front()
+            detector.pop()
             liveSpeechLen = 0
             samplesSinceLastPreview = 0
 
