@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">灵译字幕</string>
+    <string name="notif_channel_name">实时双语悬浮字幕服务</string>
+    <string name="notif_title_running">灵译字幕正在实时运行</string>
+    <string name="notif_action_stop">停止字幕</string>
+    <string name="notif_action_unlock">解锁悬浮窗</string>
+    <string name="notif_action_lock">锁定防误触</string>
+</resources>
